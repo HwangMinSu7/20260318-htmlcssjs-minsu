@@ -12,7 +12,14 @@
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=home" />
   <style>
-   
+   a {text-decoration: none;}
+   /* 구글 밑의 밑줄 없앰 */
+   a:hover {text-decoration: underline;}
+   /* 구글에 마우스를 가져다 가면 밑줄이 나옴 */
+   a:link {color: black;}
+   /* 처음(방문 하기 전) */
+   a:visited {color: gray;}
+   /* 같다 오고 난 후 회색이 된다. */
   </style>
 </head>
 
@@ -22,6 +29,7 @@
   <a href="/"><span class="material-symbols-outlined">home</span>Home</a>
   <hr>
   <a href="https://www.google.com">구글</a>
+  <a href="https://www.naver.com">네이버</a>
 
 </body>
 
