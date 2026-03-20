@@ -21,28 +21,66 @@
   <h1>입력 양식 태그</h1>
   <a href="index.html"><span class="material-symbols-outlined">home</span>Home</a>
   <hr>
-  <form action="index.html" method="get">
+  <form action="index.html" method="get"><!--임시변수 포스트로 바꾼다면-->
+  <form action="index.html" method="post" enctype=""><!--(임시공간 포스트로 바꾼다면--><!--enctype"안쪽 옵션 볼것"--><!--둘 중 (get, post 하나만 할것 (제미나이 알아보기))-->
     <fieldset>
     <legend>입력 양식 태그 종류</legend>
     <div>
       <label for="subject">제목</label>
-      <input type="text" id="subject" name="subject">
+      <input type="text" id="subject" name="subject" required><!--리콰이드 메시지가 비었다고 알려주는 역할(ex제목을 입력하지 않고 로그인 버튼을 누른 경우 -> 입력란을 작성하세요)-->
+    </div>
+    <div>
+      <label for="subject">번호</label>
+      <input type="text" id="no" name="no" value="0001" readonly><!--리드 온리 (오로지 볼수만 있다.)-->
+      <input type="hidden" name="key" value="MinSu"><!--히든 코드(?)를 숨길수 있다. F12 눌렀을때 사이트에서 뜨는 것-->
     </div>
     <div>
       <label for="password">비밀번호</label>
-      <input type="password" name="pw" id="password">
+      <input type="password" name="pw" id="password" placeholder="비밀번호를 입력하세요"><!--플레이스 홀더는 반투명으로 비밀번호를 입력하세요라고 뜨는 명령어-->
     </div>
     <div>
       <label for="female">여</label>
-      <input type="radio" id="female" name="gender" value="여">
+      <input type="radio" id="female" name="gender" value="여" checked>
       <label for="male">남</label>
       <input type="radio" id="male" name="gender" value="남">
     </div>
     <div>
+      <label for="chk_hobby_game">게임</label>
+      <input type="checkbox" name="hobby" id="chk_hobby_game" value="게임" checked><!--사이트 들어 갔을때 자동 선택-->
+      <label for="chk_hobby_chess">체스</label>
+      <input type="checkbox" name="hobby" id="chk_hobby_chess" value="체스">
+      <label>영화 <!--for 없애고 label을 뒤에 붙여도 작동한다-->
+      <input type="checkbox" name="hobby" id="chk_hobby_movie" value="영화"></label>
+    </div>
+    <div>
+      <label for="email">E-mail</label>
+      <input type="email" name="email" id="email" disabled><!--디세이브드 이메일칸을 못쓰게 막는것-->
+    </div>
+    <div>
+      <label for="mobile">휴대폰</label>
+      <select name="mobile" id="mobile">
+      <option value="">선택하세요</option>
+      <option value="010" selected>010</option><!--셀렉티드  사이트 들어갔을때 010으로 기본 선택-->
+      <option value="011">011</option>
+      </select>
+      <input type="text" name="mobile01" id="mobile01" maxlength="4"><!--maxlength 제한 숫자(단 인풋 타이프 text 일때만 가능하다. 넘버는 불가능)-->
+      <input type="number" name="mobile02" id="mobile02"> <!--maxlength 제한 숫자(단 인풋 타이프 text 일때만 가능하다. 넘버는 불가능)-->
+    </div>
+    <div>
       <input type="button" value="작성 button">
       <input type="submit" value="작성 submit">
+      <button type="button">Button</Button>
+      <button type="reset">reset</Button>
+      <button type="submit">submit</Button>
     </div>
-    </fieldset>
+    <div>
+      <label for="bigo">비고</label>
+      <textarea name="bigo" id="bigo" rows="6"></textarea> <!--textarea는 비고창에 엔터를 치면 끝없이 냐려가면서 타이밍을 할수 있다 메모장 맹키로-->
+    </div>
+    <label for="startday">시작일<label>
+      <input type="bate" name="startday" id="startday" >
+      <input type="time" >
+  </fieldset>
   </form>
   <input type="text" name="etc" id="etc">
 
