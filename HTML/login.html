@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+
+  </script>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=home" />
+  <style>
+    
+  </style>
+
+</head>
+
+<body>
+  <h1>입력 양식 태그</h1>
+  <a href="/"><span class="material-symbols-outlined">home</span>Home</a>
+  <hr>
+  <form action="index.html" method="get">
+  <fieldset>
+    <legend>로그인</legend>
+    <div>
+      <label for="ID">ID</label>
+      <input type="text" name="ID" id="ID">
+    </div>
+    <div>
+      <label for="PW">PW</label>
+      <input type="text" name="PW" id="PW">
+    </div>
+    <div>
+      <button type="submit">로그인</button>
+      <button type="reset">취소</button>
+    </div>
+    </form><!--당연하겠지만 폼안에 있어야 동작한다.-->
+    <form action="join.html">
+    <button type="submit">회원가입</button><!--서밋만 폼과 연결된다.-->
+  </fieldset>
+</form>
+</body>
+
+</html>

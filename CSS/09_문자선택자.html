@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- 상태 선택자 이거 제미나이랑 다시 공부 -->
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+
+  </script>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=home" />
+  <style>
+   p::first-letter {font-size: 30pt; font-weight: bolder;}
+   p::first-line {color: brown;}
+   /* 첫자는 커지고 첫줄은 브라운 색깔로 변한다. */
+
+   p::selection {background-color: pink; color: red}
+   /* 드래그 하면 드리그 배경은 핑크 색이고 문자는 빨강이 된다. */
+
+   h1::before {content: "❤";}
+   h1::after {content: " 참 쉬워요~!";}
+   /* h1 문자 선택자를 내가 원하는 헤드라인으로 바꿀 수 있다.
+   li태그 앞에도 붙일 수 있다.(다수의 제목에 가능) */
+  </style>
+</head>
+
+<body>
+  <h1>문자 선택자</h1>
+  <a href="/"><span class="material-symbols-outlined">home</span>Home</a>
+  <hr>
+  <p>모든 국민은 법률이 정하는 바에 의하여 납세의 의무를 진다. 국토와 자원은 국가의 보호를 받으며, 국가는 그 균형있는 개발과 이용을 위하여 필요한 계획을 수립한다. 지방의회의 조직·권한·의원선거와 지방자치단체의 장의 선임방법 기타 지방자치단체의 조직과 운영에 관한 사항은 법률로 정한다. 이 헌법중 공무원의 임기 또는 중임제한에 관한 규정은 이 헌법에 의하여 그 공무원이 최초로 선출 또는 임명된 때로부터 적용한다. 각급 선거관리위원회의 조직·직무범위 기타 필요한 사항은 법률로 정한다. 위원은 탄핵 또는 금고 이상의 형의 선고에 의하지 아니하고는 파면되지 아니한다. 대통령이 임시회의 집회를 요구할 때에는 기간과 집회요구의 이유를 명시하여야 한다.</p>
+  
+</body>
+
+</html>

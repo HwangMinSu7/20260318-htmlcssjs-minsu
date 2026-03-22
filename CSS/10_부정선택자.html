@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- 상태 선택자 이거 제미나이랑 다시 공부 -->
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+
+  </script>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=home" />
+  <style>
+   .bright {color: rgb(202, 33, 118);}
+   /* rgb 색상을 채도를 설정해서 줄 수 있다.
+   구글 컬러피커에 색을 맞춰 숫자를 복 붙하면 색깔이 입혀진다. */
+   .nobright {color: red;}
+   li:not(.nobright) {color:black;}
+   /* ! = not 부정 같다 (용어 따로 있음 공부 할것) */
+  </style>
+</head>
+
+<body>
+  <h1>부정 선택자</h1>
+  <p></p>
+  <a href="/"><span class="material-symbols-outlined">home</span>Home</a>
+  <hr>
+   <ol>
+    <li class="bright">강아지</li>
+    <li class="bright">고양이</li>
+    <li class="nobright">소</li>
+    <li class="nobright">돼지</li>
+  </ol>
+
+</body>
+
+</html>
