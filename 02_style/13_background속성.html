@@ -12,12 +12,22 @@
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=home" />
   <style>
-   
+   * {padding: 0; margin: 0; height: 100%;}
+   body {
+    background-image: url('/images/BackgroundFront.png'), url('/images/BackgroundBack.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    /* repeat-x (x축)/ repeat-y (y축)*/
+    background-position: top;
+    /* bottom / center / left / right / 화면 크기를 기준으로 */
+    min-height: 100vh;
+    /* 화면의 최소크기 지정 */
+   }
   </style>
 </head>
 
 <body>
-  <h1>background 속성</h1>
+  <h1>css의 background 속성</h1>
   <p></p>
   <a href="/"><span class="material-symbols-outlined">home</span>Home</a>
   <hr>
