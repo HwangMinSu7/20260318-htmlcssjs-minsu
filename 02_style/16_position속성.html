@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=home" />
+  <style>
+    body > div {
+      border: 3px solid black; width: 150px; height: 150px; position: relative; 
+      overflow: scroll;/*overflow, overflow-x/y가 있다.(스크롤 적용시 옵션)*/
+      /*부모의 태그를 넘어섰을 때 처리하기 위한 옵션(hidden, scroll, visible(기본값), auto)*/
+
+    }
+    .box {width: 100px; height: 100px; position: absolute;}
+    .box:nth-child(1) {background: red; top: 10px; left: 10px; z-index: 1;}
+    .box:nth-child(2) {background: green; top: 50px; left: 50px; z-index: 2;}
+    .box:nth-child(3) {background: blue; top: 90px; left: 90px; z-index: 3;}
+  </style>
+</head>
+
+<body>
+  <h1>CSS의 position 속성</h1>
+  <p>position의 속성은 static(기본값, 부모 top, left 적용 안됌), relative(부모, static 기준), absolute(문서(다큐먼트)), fixed(화면)</p>
+  <!-- 부모 태그를 기준으로 위치를 잡을 때 : 부모는 relative 이면서 자식은 absolute -->
+  <a href="/"><span class="material-symbols-outlined">home</span></a>
+  <hr>
+  <div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+  </div>
+  <p>사회적 특수계급의 제도는 인정되지 아니하며, 어떠한 형태로도 이를 창설할 수 없다. 국가는 주택개발정책등을 통하여 모든 국민이 쾌적한 주거생활을 할 수 있도록 노력하여야 한다. 국가안전보장회의는 대통령이
+    주재한다. 국회에 제출된 법률안 기타의 의안은 회기중에 의결되지 못한 이유로 폐기되지 아니한다. 다만, 국회의원의 임기가 만료된 때에는 그러하지 아니하다. 위원은 정당에 가입하거나 정치에 관여할 수 없다.
+    대통령은 국무총리·국무위원·행정각부의 장 기타 법률이 정하는 공사의 직을 겸할 수 없다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 계엄을 선포한 때에는 대통령은 지체없이 국회에 통고하여야
+    한다.</p>
+
+</body>
+
+</html>
