@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+
+// 선생님꺼랑 비교 해보기
+// 선생님꺼랑 비교 해보기
+// 선생님꺼랑 비교 해보기
+
+  </script>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=home" />
+  <style>
+   span {
+    background: yellow;
+    border: 2px dashed black; 
+    /*solid: ─── (실선, 가장 흔함)
+      dashed: --- (점선, 긴 바 형태)
+      dotted: ... (점선, 동그란 점 형태)
+      double: === (이중 실선)*/
+    /* span의 margin은 상하가 안 먹는다. */
+    /* margin 외부 박스 / padding 내부 */
+   }
+   div {
+    background: red; margin: 20px 0 0 0; margin: 10px 0;
+    margin-top: 20px;
+    padding: 20px;
+    border: 2px solid black;
+    /* margin 외부 박스 / padding 내부 */
+    /* 2번째 마진은 상하 와 좌후 끼리 똑같을 때 2개로만 할 수 있다. (하나로도 가능 상하좌우 똑같을 때.) */
+    width: 200px;
+    /* 이 값의 총 픽셀 244px / width + padding + border */
+    border-radius: 20px;
+    /* 꼭짓점 갂는 코드 */
+    /* 이것도 마찬가지로 하나만 있으면 1 2 3 4 다 적용 */
+   }
+   .circle {
+    padding: 0;
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    /* width 가로 height 세로 */
+    text-align: center;
+    line-height: 96px;
+    /* 글자 태그 */
+    border-top: 0px; border-bottom: 0px;
+    /* ㅁㅓ리 수염 없앰 */
+   }
+   .circle::after {content: 'super';}
+  </style>
+</head>
+
+<body>
+  <h1>css의 box 속성</h1>
+  <p>모든 태그는 사각형의 테두리를 가진다.</p>
+  <a href="/"><span class="material-symbols-outlined">home</span>Home</a>
+  <hr>
+  <span>span box</span>
+  <div>div box</div>
+  <p>완벽한 원을 만그세요</p>
+  <div class="circle"></div>
+   
+
+</body>
+
+</html>
