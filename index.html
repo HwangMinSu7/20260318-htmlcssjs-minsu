@@ -4,18 +4,33 @@
 		<meta charset="UTF-8">
 		<title>welcome html</title>
 		<style>
-			div {
-				width: 200px;
-				border: 1px dashed black;
-				--display: inline-block;
-				float: left; /*display랑 같이 쓰면 오류(작동은 됌) float가 속성을 block으로 바꾼다.*/
+			/* --div { */
+				/* --width: 200px; */
+				/* --border: 1px dashed black; */
+				/* --display: inline-block; */
+				/*--float: left;*/ /*display랑 같이 쓰면 오류(작동은 됌) float가 속성을 block으로 바꾼다.
+			}*/
+			.container {
+				display: flex;
+				justify-content: stretch;
+				gap: 10px;
+				margin-bottom: 30px;
 			}
+			.container > div {
+				border: 1px dashed black;
+				border-radius: 15px;
+				flex-grow: 1;
+				flex-basis: 0;
+			}
+			h3 {padding-left: 20px;}
 		</style>
 	</head> 
 	<body> 
-		<h1>html 태그</h1>
+		<h1>html 5, css, Javascript</h1>
 		<hr>
+		<div class="container">
 		<div>
+			<h3>HTML</h3>
 		<ol>
 			<li><a href="/01_html/01_text.html">글자관련태그</a></li>
 			<li><a href="/01_html/02_image.html">이미지관련태그</a></li>
@@ -30,6 +45,7 @@
 		</ol>
 		</div>
 		<div>
+			<h3>CSS</h3>
 		<ol>
 			<li><a href="/02_style/01_기본선택자.html">기본 선택자</a></li>
 			<li><a href="/02_style/02_속성선택자.html">속성 선택자</a></li>
@@ -44,6 +60,7 @@
 		</ol>
 		</div>
 		  <div>
+				<h3>CSS 2</h3>
 			<ol>
 		   <li><a href="/02_style/11_css단위.html">css 단위</a></li>
 		   <li><a href="/02_style/12_글자속성.html">글자 속성</a></li>
@@ -62,16 +79,22 @@
 					<li><a href="/02_style/21_animationcopy3.html">animation 3</a></li>
 				</ul>
 			 </li>
-
 		   <li><a href="/02_style/22_mobile.html">반응형 웹</a></li>
 		   <li><a href="/02_style/23_ex01.html">실습1 - ID카드 만들기</a></li>
-			 </ol>
-			 <div>
-				<ol>
-					<li><a href="/03.test.html">테스트</a></li>
-				</ol>
-			 </div>
-			 
+			 </ol>		 
+		</div>
+		<div>
+			<h3>Javascript</h3>
+			<ol>
+				<li><a href="/03_js/01_variable.html">변수(variable) 변수의 선언 과 종류</a></li>
+			</ol>
+		</div>
+		<div>
+			<h3>Dom</h3>
+			<ol>
+				<li></li>
+			</ol>
+		</div>
 		</div>
 		
 	</body>
