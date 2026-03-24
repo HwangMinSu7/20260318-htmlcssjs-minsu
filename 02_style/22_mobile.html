@@ -12,9 +12,25 @@
     @media screen {
       body {background: yellow;}
     }
+
     @media print {
-      body {background: rgb(255, 255, 255);}
+      body {background: rgb(155, 255, 255);}
     }
+    @media (max-width: 600px) {
+      body {background: blue;}
+      .box-wrap {
+        background: white;
+        flex-direction: column;
+      }
+    }
+    .box-wrap {display: flex; gap: 10px;}
+    .box {
+      flex: 1;
+      background: orange;
+      padding: 30px;
+      text-align: center;
+    }
+
   </style>
 </head>
 
@@ -24,6 +40,11 @@
   <p>viewport 메타 태그, flex, @media</p>
   <a href="/"><span class="material-symbols-outlined">home</span></a>
   <hr>
+  <div class="box-wrap">
+   <div class="box">box 1</div>
+   <div class="box">box 2</div>
+   <div class="box">box 3</div>
+  </div>
   <p>사회적 특수계급의 제도는 인정되지 아니하며, 어떠한 형태로도 이를 창설할 수 없다. 국가는 주택개발정책등을 통하여 모든 국민이 쾌적한 주거생활을 할 수 있도록 노력하여야 한다. 국가안전보장회의는 대통령이
     주재한다. 국회에 제출된 법률안 기타의 의안은 회기중에 의결되지 못한 이유로 폐기되지 아니한다. 다만, 국회의원의 임기가 만료된 때에는 그러하지 아니하다. 위원은 정당에 가입하거나 정치에 관여할 수 없다.
     대통령은 국무총리·국무위원·행정각부의 장 기타 법률이 정하는 공사의 직을 겸할 수 없다. 헌법개정은 국회재적의원 과반수 또는 대통령의 발의로 제안된다. 계엄을 선포한 때에는 대통령은 지체없이 국회에 통고하여야
