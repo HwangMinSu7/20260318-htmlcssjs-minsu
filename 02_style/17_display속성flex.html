@@ -69,7 +69,7 @@
 
   <fieldset>
     <legend>container에 display속성을 block, flex, inline-flex로 변경</legend>
-    <p>flex는 기본적으로 float와 달리 contents영역의 크기가 동일하게 설정됨</p>
+    <p>flex는 기본적으로 float와 달리 contents영역의 크기 만큼 설정됨</p>
     <label for="rbBlock"><input type="radio" name="grp1" id="rbBlock" checked onclick="showGrp1(1)">block</label>
     <label for="rbFlex"><input type="radio" name="grp1" id="rbFlex" onclick="showGrp1(2)">flex</label>
     <label for="rbInlineFlex"><input type="radio" name="grp1" id="rbInlineFlex"
@@ -131,7 +131,7 @@
   </fieldset>
 
   <fieldset>
-    <legend>container에 y축 방향 정렬, align-items</legend>
+    <legend>container에 y축 방향 정렬, align-items 각 item들에 대한 정렬</legend>
     <p>stretch(기본), flex-start, flex-end, center, <br>
       baseline(제일 큰 contents영역의 밑줄기준으로 정렬)</p>
     <div class="container" style="display: flex; align-items: baseline; height: 200px;">
@@ -142,7 +142,8 @@
   </fieldset>
 
   <fieldset>
-    <legend>container에 여러 행 정렬, align-content</legend>
+    <legend>container에 여러 행 정렬, align-content 여러 줄 들의 정렬</legend>
+    <!-- y축 다수가 있을때 -->
     <p>stretch(기본), flex-start, flex-end, center, space-between(item 사이에 균일한 간격)<br>
       space-around(item 둘레에 균일한 간격), space-evenly(item 사이,둘레 균일한 간격)</p>
     <div class="container"
