@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=home" />
+  <style>
+  </style>
+  <script>
+    
+    
+  </script>
+</head>
+
+<body>
+  <h1>processing - operator</h1>
+  <p>연산자</p>
+  <a href="/"><span class="material-symbols-outlined">home</span>Home</a>
+  <hr>
+  <ul>
+    <li>산술 연산자(Arithmetic operator +, -, *, /, %, **)</li>
+    <script>
+      console.log("=== 산술연자===");
+      let result = 1 + 1;
+      result = 1 - 1;
+      result = 1 * 1;
+      result = 1 / 1;
+      result = 10%3; // 나머지 연산자 10/3 -> 나머지 1
+      result = 2**2;
+      const share = 10/7
+      const remain = 10%7
+      console.log(`몫은 ${Math.floor (share)}, 나머지는 ${remain}`) // `백틸트  /  몫 = share, 나머지 = remain   소수를 올리거나 자를때 =  math.floor = 절삭,
+      console.log(7+7+"7"+7+7); // "7" 뒤의 숫자는 문자가 되어 777이 나온다(된다).
+      console.log(true + 0 + "참"); // 1참   true는 1이 된다.
+      console.log(true + 2 + "참"); // 3참   true는 1이 된다.
+      console.log(false + -10 + "거짓"); // -10거짓   false는 0이 된다.
+      console.log([] + " world") // []와 문자열 + 연산할 때 []는 ""(빈 문자열)      배열은 하나의 이름으로 여러 값을 저장하는 특별한 변수다.
+    </script>
+
+    <li>비교 연산자(comparison operator : ==, &lt;, &gt;, &ge;, &le;, !=, ===, !==)</li>
+    <span>숫자, 문자, 날짜, 논리 등에 대한 비교 연산</span>
+    <script>
+      console.log("=== 비교연자===");
+      let n1 = 'A';
+      let n2 = 'a';
+      console.log(n1 == n2);
+      console.log(n1 === n2);
+      console.log(n1 > n2);
+      console.log(n1 != n2);
+      console.log(n1.charCodeAt(0));
+      console.log("0".charCodeAt(0));
+      console.log("a".charCodeAt(0));
+      // 0 = 48 0 ~ 올라갈때 마다 +1, A = 65, a = 97
+      // 문자의 복수가 문자 열 (자바 스크립트 문자가 없다 (자바는 있다)).)
+      // 문자열 let n1 이 aAa 이면 charCodeAt에 0, 1 ,2 가 들어가면 97, 65, 97이 각각 출력이 된다.)
+      console.log(String.fromCharCode(65))
+      console.log(null == undefined) // true
+      console.log(null === undefined) // false
+      console.log(null == '') // false
+      console.log(undefined == '') // false
+    </script>
+
+    <li>논리 연산자</li>
+    <table>
+      <tr>
+        <th>입력</th>
+        <th>|| 논리합</th>
+        <th>&&(논리곱)</th>
+      </tr>
+      <tr>
+        <td>true true</td>
+        <td>true</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td>true false</td>
+        <td>true</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>false true</td>
+        <td>true</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>false false</td>
+        <td>false</td>
+        <td>false</td>
+      </tr>
+    </table>
+
+    <h4>truthy value</h4>
+    <ol>
+      <li>true</li>
+      <li>0을 제뢰한 정수, 실수, infinity, -infinity</li>
+      <li>빈문자열("")을 제외한 모든 문자열</li>
+      <li>참조형 객체(Object, 내장객체, 배열, class)</li>
+      <li>{} 빈 객체, [] 빈 배열</li>
+      <li>function</li>
+      <li>DOM, BOM 사전 정의된 객체들</li>
+    </ol>
+
+    <h4>Falst value</h4>
+    <ol>
+      <li>false</li>
+      <li>undefined, null</li>
+      <li>NaN (Not a Number)</li>
+      <li>0, -0</li>
+      <li>"". '' 빈 문자열</li>
+      <li>[]가 연산자를 만나면 '' 또는 ""이 되어서 빈문자열로 인식</li>
+      <li>document.all, alert() 반환되는 값이 없어서 undefined가 됨</li>
+    </ol>
+    <script>
+      const b1 = 1 < 2;
+      const b2 = false;
+      console.log("b1 && b2", b1 && b2);
+      console.log("b1 && !b2", b1 && !b2);
+      console.log(!b1 && (!b2 || 'A') < 'a') // 비교연산자가 논리 연산자 보다 우선순위가 높다.
+      console.log(!b1 && b2 &&('A' < 'a')) 
+      console.log(b1 && !b2 &&('A' < 'a'))
+      // &&논리곱 연산자가 2개 이상일경우 첫번째 false한 값을 반영, 
+      // 모두 true일 경우 맨 마지막이 값
+    </script>
+  </ul>
+  
+</body>
+
+</html>

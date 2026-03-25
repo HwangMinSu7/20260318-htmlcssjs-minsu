@@ -187,6 +187,26 @@
     </tbody>
   </table>
 
+  <h3>변수의 scope</h3>
+  <span>var 의 scope</span>
+  <script>
+    if(true) { var scopeVar = 10;}
+    console.log("scopeVar: ", scopeVar); // 함수외는 전역변수
+    function temp(){
+      var scopeFnecVAr = 20;
+    }
+    console.log(scopeFncVar); // 함수안에서만 유효
+  </script>
+
+<span>let 의 const 의 scope</span>
+  <script>
+    if(true) { let scopeLet = 10;}
+    console.log("scopeLet: ", scopeLet); // 블록안에서만 유효
+    function temp(){
+      var scopeFnecLet = 20;
+    }
+    console.log(scopeFncLet); // 블록안에서만 유효
+  </script>
 </body>
 
 </html>
