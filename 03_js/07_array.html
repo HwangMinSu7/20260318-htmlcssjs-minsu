@@ -60,23 +60,23 @@ console.log("==============================")
     console.log(queue)
 console.log("=====배열 자르기, 합치기=====")
    let arr1 = [10, 20, 30, 40, 50]
-    const arr2 = arr1.slice(0, 2); // slice() 잘라내기 배열원소일부추출(원본유지),마지막 인자 제외
+    const arr2 = arr1.slice(0, 2); // slice() 잘라내기 배열원소 일부추출(원본유지),마지막 인자 제외
     console.log(arr2);
     console.log(arr1)
 console.log("==============================")
-    const arr3 = arr1.splice(0, 2); // splice() 잘라내기 배열원소추출(원본갱신),마지막 인자 제외
+    const arr3 = arr1.splice(0, 2); // splice() 잘라내기 배열원소 추출(원본갱신),마지막 인자 제외
     console.log("arr3:",arr3);
     console.log("splice() 잘라내기 후: ",arr1)
 console.log("==============================")
-    arr1.splice(0, 0, 10, 20) // splice()(인덱스, 삭제할 길이(갯수), 값1, 값2, ...) 0번째에 지우는거 없이 갑들 추가
+    arr1.splice(0, 0, 10, 20) // splice()(인덱스, 삭제할 길이(갯수), 값1, 값2, ...) 0번째에 지우는거 없이 값들 추가 
     console.log("splice() 합치기 후: ",arr1)
     arr1.splice(0, 2, 1, 2)
     console.log("splice 교체 후:", arr1) // 1, 2, 30, 40, 50
+    //예시가 2개
 console.log("==============================")
     const arr4 = arr1.concat(arr3) // concat() 합치기
     console.log("합치기 후:", arr4)
     
-console.log("=====배열을 문자열로 바꾸기=====")
     console.log("===배열 문자열로 바꾸기===")
     console.log("join() 후:", arr1.join()) //
     console.log("join() 후:", arr1.join("/")) //
