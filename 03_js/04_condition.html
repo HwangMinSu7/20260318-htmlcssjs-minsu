@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+
+  </script>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=home" />
+  <style>
+  </style>
+</head>
+
+<body>
+  <h1>조건문(condition) :: if, if eles, if else if, 중첩 if, switch case 문</h1>
+  <p></p>
+  <a href="/"><span class="material-symbols-outlined">home</span>Home</a>
+  <hr>
+  <ul>
+    <li>if</li>
+    <pre>
+      if(조건) {명령문}
+    </pre>
+    <script>
+      if(1) 
+      console.log("if문 실행") // if문 다음에 나오는 {}는 명령이 하나만 들어가 있을경우에는 생략가능 / 복수 일때 {} 활용
+
+      if(0)
+      console.log("skip") // if 조건 안에 트루시 한 값이 있을 때만 작동한다. 아니면 작동을 하지 않는다.(건너뛴다)
+     
+      if(1<2) {
+        let a = 1;
+        console.log("명령문1")
+        console.log("명령문2")
+        console.log("명령문3")
+      }
+    </script>
+
+    <li>if else</li>
+    <pre>
+      if(조건){
+        명령문  // 조건이 참일 경우
+      } else {
+        명령문  // 조건이 거짓일 경우
+      }
+    </pre>
+    <script>
+      if(1)
+      console.log("if문 실행")
+    else
+    console.log("skip")
+    var num = 100;
+    if (isNaN(num))
+    console.log("숫자가 아닙니다.");
+    else console.log("숫자입니다.");
+    let str = isNaN(num)?"숫자가 아닙니다.":"숫자입니다.";
+      console.log(str);
+      console.log(isNaN(num)?"숫자가 아닙니다.":"숫자입니다.")
+    </script>
+
+    <li>if else if</li>
+    <pre>
+      if(조건){
+        명령문  // 조건이 참일 경우
+      } else if(조건 2) {
+        명령문  // 조건 2일 경우
+      } else if(조건 3) {
+        명령문  // 조건 3일 경우
+      } else {
+        명령문  // 거짓일 경우
+      }
+    </pre>
+    <script>
+      //let score = prompt("당신의 점수를 입력하세요") // 여기 말고 사이트 들어가서 점수를 입력한다.
+//      if(score>=90)
+//     console.log("A")
+//   else if(score>=80)
+//   console.log("B")
+// else if(score>=70)
+// console.log("C")
+// else if(score>=60)
+// console.log("D")
+// else 
+// console.log("F") 
+
+let month = prompt("당신의 태어난 날자를 입력하세요")
+if(month >= 3 && month <= 5) 
+// && 쓰는 이유는 둘다 만족을 해야 하기 때문     && = AND
+console.log("봄")
+else if(month >= 6 && month <= 8)
+console.log("여름")
+else if(month >= 9 && month <= 11)
+console.log("가을")
+else if(month == 12 || month == 1 || month == 2)
+console.log("겨울")
+else
+console.log("1~12사이의 숫자를 입력해 주세요")
+    </script>
+
+    <li>switch case 문 :: 비연속적인 데이터의 비교구문을 할 경우
+    </li>
+    <pre>
+      switch () {
+        case 조건 :
+          명령문;
+      
+        case 조건 :
+          명령문;
+      
+        case 조건 :
+          명령문;
+
+        default :
+          명령문
+      }
+    </pre>
+    <script>
+      input = prompt("당신이 태어난 달을 입력하세요")
+      if (isNaN(input)) { 
+        // input에 들어오는 정보가 숫자가 아니다.
+        console.log('1~12사이의 숫자를 입력하세요')
+      } else {
+        switch (input) {
+          case 3: case 4: case 5:
+            console.log("봄입니다."); break;
+          case 6: case 7: case 8:
+            console.log("여름입니다."); break;
+          case 9: case 10: case 11:
+            console.log("가을입니다."); break;
+          case 12: case 1: case 2:
+            console.log("겨울입니다."); break;
+          default:
+            console.log("1~12월 사이의 숫자를 입력해주세요")
+        }
+      }
+    </script>
+  </ul>
+</body>
+
+</html>

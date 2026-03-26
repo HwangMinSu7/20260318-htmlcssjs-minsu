@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+
+  </script>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=home" />
+  <style>
+  </style>
+</head>
+
+<body>
+  <h1>반복문(loop) :: loop (for, while, do while, for in)</h1> <!--규칙성을 찾아야 한다.(변하는 값에는 초기값, 조건, 증감을 찾아라)-->
+  <a href="/"><span class="material-symbols-outlined">home</span>Home</a>
+  <hr>
+  <ul>
+    <li>for</li> <!--회수가 정해져 있을때 (while와 차이점)-->
+    <pre>
+      for(초기값; 조건; 증감) {
+        명령문
+      }
+    </pre>
+    <script>
+      //for(let i = 1; i < 10; i++) {
+        //console.log(i)
+      //}
+
+      //for(let i = 1; i < 10; i++)
+      //console.log(`2* ${i} = ${2*i}`) // 백틸트 사용 ``
+      
+      //for(let i = 2; i < 10; i++) {
+        //for(let j = 1; j < 10; j++) {
+          //console.log(`${i} * ${j} = ${i * j}`) // 구구단
+        //}
+      //}
+      // 변하는 인자가 다르면 변수를 따로 넣어 준다.
+
+      //for(let i = 1; i < 10; i++) {
+        //for(let j = 2; j < 10; j++) {
+          //console.log(`${j} * ${i} = ${j * i}`) // 1~9 까지 
+        //}
+      //}
+
+      for(let i = 2; i < 10; i+=3) {
+        for(let j = 1; j < 10; j++) {
+          //for(let k = 0; k < 3; k++) {
+            console.log(`${i} * ${j} = ${(i) * j} 
+                         ${i+1} * ${j} = ${(i+1) * j}
+                         ${i+2} * ${j} = ${(i+2) * j}`)
+          // }
+          }
+        }
+
+        for(let i = 2; i < 10; i+=3) {
+        for(let j = 1; j < 10; j++) {
+          for(let k = 0; k < 3; k++) {
+            console.log(`${i+k} * ${j} = ${i + k} * ${j}`)          
+           }
+          document.writeln("<br>")
+          }
+          document.writeln("<br>")
+        }
+
+
+         
+        
+        // 선생님꺼
+        console.log("====================================")
+      for (let i = 2; i < 10; i += 3) {
+        for (let j = 1; j < 10; j++) {
+          console.log(
+            (i + 2 != 10) ?
+              `${i + 0}*${j}=${(i + 0) * j}  ${i + 1}*${j}=${(i + 1) * j} ${i + 2}*${j}=${(i + 2) * j}` :
+              `${i + 0}*${j}=${(i + 0) * j}  ${i + 1}*${j}=${(i + 1) * j}`
+          )
+        }
+        console.log("")
+      }
+
+      for (let i = 2; i < 10; i += 3) {
+        for (let j = 1; j < 10; j++) {
+          for (let k = 0; k < 3; k++) {
+            if (i + k != 10) document.write(`${i + k}*${j}=${(i + k) * j}  `)
+          }
+          document.writeln("<br>")
+        }
+        document.writeln("<br>")
+      }
+      
+    </script>
+
+    <li>while</li>
+    <pre>
+      while(조건) {} <!--회수가 어중간 할때-->
+    </pre>
+    <script>
+      const rand = Math.floor(Math.random() *100) + 1
+      console.log(rand) 
+      //  Math.floor 실수를 지워버리는 절삭
+    </script>
+  </ul>
+</body>
+
+</html>
