@@ -22,22 +22,48 @@
     <li>익명 함수만 화살표함수로 변형가능</li>
     <script> // 함수는 기능을 합한 것 (처리할 내용을 한번에 처리)
       var fnc1 = function() {
-        conosle.log("매개변수(x), 리턴(x)")
+        console.log("매개변수(x), 리턴(x)")
       }
-      fnc1 = () => {conosle.log("매개변수(x), 리턴(x)")}
-      fnc1 = () => conosle.log("매개변수(x), 리턴(x)")
+      fnc1 = () => {console.log("매개변수(x), 리턴(x)")}
+      fnc1 = () => console.log("매개변수(x), 리턴(x)")
       // 한줄 만 쓸때 중괄호 {} 생략 가능
+      fnc1();
       
-
       var fnc1 = function(a) {
         conosle.log("매개변수(o), 리턴(x)")
       }
-      var fnc1 = function() {
+      fnc2 = (a) => console.log("매개변수(o), 리턴(x)")
+      fnc2 = a => console.log("매개변수(o), 리턴(x)")
+      // 명령문이라서 return이 없음.
+      // 매개변수가 하나만 들어가면 매개변수의 소괄호() 생략 가능
+      fnc2();
+
+      var fnc3 = function() {
         return("매개변수(x), 리턴(o)")
       }
-      var fnc1 = function(a) {
-        return("매개변수(o), 리턴(o)")
+      fnc3 = () => {return("매개변수(x), 리턴(o)")}
+      fnc3 = () => ("매개변수(x), 리턴(o)")
+      // return을 생략 :: 값이기 때문
+      fnc3();
+
+      var fnc4 = function(a) {
+        return a + "매개변수(o), 리턴(o)"
       }
+      fnc4 = (a) => {return("매개변수(o), 리턴(o)")}
+      fnc4 = a => a + "매개변수(o), 리턴(o)"
+      fnc4();
+      // return은 값만 나온거기 때문에 값을 출력 하려면 console.log를 적용한다.
+    </script>
+
+    <li>중첩 함수의 익명함수를 화살표 함수로 축약</li>
+    <script>
+      var fncInFnc = function(a) {
+        inFnc = function(b) {
+          return a + b;
+        }
+        return inFnc
+      }
+      fncINfnc = a => b => a + b;
     </script>
   </ol>
   <script>
