@@ -9,13 +9,64 @@
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=home" />
   <style>
+    #box {
+      background-color: pink; /*스타일에서 id는 복수개가 있을때 모두 선택 됩니다.*/
+    }
   </style>
+  <script>
+    window.onload = function() {
+      var divbox = document.getElementById('box') // id가 복수개 있을때 첫번째만 선택 된다.
+      console.log(divbox.textContent) // id는 자바스크립트에서는 하나만 사용
+      // console.log(typeof(divBox.textContent)) 확인하는법
+
+      var lis = document.getElementsByTagName('li')
+      console.log(typeof(lis))
+      for(item of lis) {
+        item.style.background = 'red'
+      }
+
+      var subject = document.getElementsByClassName('subject')
+      for(let i = 0; i < subject.length; i++) {
+        subject[i].style.color = 'blue'
+      }
+
+      var box = document.querySelector("#box");
+      box.style.border='1px dashed black'
+
+      var box = document.querySelectorAll("#box")
+      for(let i = 0; i < box.length; i++)
+      box[i].style.backgroundColor = 'white'
+    }
+  </script>
 </head>
 
 <body>
-  <h1>반복 구문에서 사용(break, continue)</h1>
+  <h1>DOM(Document Object Model) 문서 객체 모델
+    <p>다큐먼트를 다루기 위한 정의된 API(Application Programming Interface)</p>
+  </h1>
   <a href="/"><span class="material-symbols-outlined">home</span>Home</a>
   <hr>
+  <h3>DOM 요소 선택하기</h3>
+  <ol>
+    <li>ID로 선택하기: document.getElementById()</li>
+    <script>
+      // const boxes = document.getElementById('box') // 다큐먼트가 읽혀지지 않은 상태
+      // console.log(boxes.textContent)
+    </script>
+
+    <li>태그로 선택하기: document.getElementsByTagName()</li>
+
+    <li>class로 선택하기: document.getElementsByClassName()</li>
+
+    <li>css의 선택자로 선택하기 단수: document.querySelector()</li>
+
+    <li>css의 선택자로 선택하기 복수: document.querySelectorAll()</li>
+
+  </ol>
+
+  <h3 id="box" class="subject">Title</h3>
+  <div id="box" class="subject">Box</div>
+
 </body>
 
 </html>
