@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=home" />
+  <style>
+  </style>
+</head>
+
+<body>
+  <h1>함수 function(같은 이름으로 여러개의 기능을 지정)</h1>
+  <a href="/"><span class="material-symbols-outlined">home</span>Home</a>
+  <hr>
+  <p>함수는 처리의 집합된 단위, 궁극적 목적은 재사용</p>
+  <ol>
+    <li>함수의 선언</li>
+  <script>
+    fnc(); // 호이스팅 : 값을 저정하기 전에 먼저 선언 (검색 해보기)
+    function fnc() {
+      console.log("원형함수입니다.")
+    }
+    console.log(fncVar) // undefined
+    // fncVar(); // 변수에다 할경우 어렵다? (검새 해보기)
+    var fncVar = function() { // 함수 이름이 없는것은 익명 함수
+      console.log("fncVer 익명함수입니다.")
+    } 
+  </script>
+
+  <li>함수의 유형</li>
+  <ul>
+    <li>매개변수 x, 리턴 x</li>
+    <script>
+      function hello() {
+        console.log("hello world")
+        // return이 없지만, 함수 내부적로 return; 생략되어 있음.
+      }
+      var fncVar = function() {
+        console.log("hello world")
+      }
+    </script>
+
+    <li>매개변수 o, 리턴 x</li>
+    <script>
+      function hello(name) {
+        console.log("hello" + name)
+      }
+      hello("소드마스터 둘리")
+      var fncVar = function (name) {
+        console.log("hello" + name)
+      }
+      fncVar("희동이")
+    </script>
+
+    <li>매개변수 x, 리턴 o</li>
+    <script>
+      function hello() {
+        return "hello world"
+      }
+      hello() // 리턴후 작동될 코드가 없음
+      var tmp = hello() // 함수의 리턴 값을 한번 이상 사용할 셩우 변수로 받는게 효율적 
+        console.log(tmp)
+        // console.log(hello()) 리턴값을 한번만 사용할 경우 직접 매개변수로 적용
+        console.log(hello())
+      
+      var fncVar = function () {
+        return "fncVar"
+      }
+      fncVar("희동이")
+    </script>
+
+    <li>매개변수 o, 리턴 o</li>
+    <script>
+      function hello(name) {
+        return `hello ${name}`
+      }
+      hello("둘리") // 리턴후 작동될 코드가 없음
+      var tmp = hello("둘리") // 함수의 리턴 값을 한번 이상 사용할 셩우 변수로 받는게 효율적 
+        console.log(tmp)
+        console.log("둘리")
+        // console.log(hello()) 리턴값을 한번만 사용할 경우 직접 매개변수로 적용
+      
+      var fncVar = function (name) {
+          return "hello " + name
+      }
+      console.log(fncVar("희동이"))
+      var sum = function (a, b, c, d) {
+         return a + b + c; } // 가능
+        var sum = function (a, b, c) {
+           return a + b + c + d; } // 에러
+    </script>
+  </ul>
+
+  <li>매개변수에 따른 함수의 유형</li>
+  <script>
+    function myFnc(a, b) { // 매개변수에 var, let, const 사용불가
+      console.log(a + b)
+    }
+    myFnc(1, 1); 
+    myFnc(true, true); 
+    myFnc("hello", "world");
+    myFnc(true, 1);
+    myFnc([], 1); // []와 문자열 + 연산할 깨 []는 ""(문자열)
+    myFnc(1, 1, 1, 1, 1); // 정의된 매개변수의 갯수와 가를 때는 정의된 매개변수만 처리
+    console.log("spread operator 전개연산자")
+    var arr1 = [1, 2];
+    var arr2 = [3, 4];
+    var arr3 = [...arr1, ...arr2] // ...안찍으면 출력이 1234 가 아닌 묶여서 나온다.        전개 연산자로 매개변수를 combined
+    console.log(arr3)
+    var sum = function (a, b, c) {
+       return a + b + c; }
+      console.log(sum(...arr3)) // 구조분해????
+      
+      console.log("... : rest parameter 나머지 매개변수")
+      function sumAll(...nums) {
+        tot = 0;
+        for(let i = 0; i < nums.length; i++) {
+          tot += nums[i]
+        }
+        console.log(tot);
+      }
+      sumAll(1, 2); sumAll(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+    //console.log(a) 지역 변수????
+    // 매개변수는 함수 영역 (scope) 이기 떄문에 외부에서 접근 불가
+  </script>
+  </ol>
+</body>
+
+</html>

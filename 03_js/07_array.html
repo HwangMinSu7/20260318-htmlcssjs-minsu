@@ -31,6 +31,12 @@
       // scores.length 스코어스 길이 값(점수가 몇개 인가.?)
       tot = tot + scores[i]
     }
+    for(let idx in scores) { // index로 접근
+      console.log(idx, scores[idx])
+    }
+    for(let scores of scores) { // 원소로 접근
+      console.log(scores);
+    }
     console.log(`합계는 ${tot}`)
     console.log(`합계는 ${tot} 평균은 ${Math.floor(tot/scores.length)}`)
 
@@ -88,8 +94,8 @@ console.log("===배열 순서 바꾸기===")
     console.log("reverse() 역순 후:", arr5.reverse())
     console.log("sort() 정렬 후:",arr5.sort())
 
-    let arr6 = [10, 2, 30, 1]
-    console.log("sort() 정렬 후:",arr6.sort()) // sort() 원소를 문자열로 변경 후 정렬 1, 10, 2, 30
+    let arr6 = [10, 2, 30, 1]   // 익명 함수 공부하기 ----------------------------------------------------
+    console.log("sort() 정렬 후:",arr6.sort()) // sort() 원소를 문자열! 로 변경 후 정렬 1, 10, 2, 30
     arr6.sort(function(a, b) {
       return a - b; // 오름차순
       //return b - a; // 내림차순
@@ -108,6 +114,7 @@ console.log("===배열 탐색, 존재여부 바꾸기===")
     // findIndex()
 
     console.log("===배열 반복 처리===")
+    // 중요========================================================
     //forEach(), map(), filter(), reduce(), some(), every()
 
     console.log("===배열 평탄화===")
@@ -122,14 +129,23 @@ console.log("===배열 탐색, 존재여부 바꾸기===")
     // 2차원 배열
     let arr2d = [[1, 2, 3], [4, 5, 6]]; // 2행 3열
 
-    for(let i = 0; i < arr2d.length; i++) {
-      for(let j = 0; j < arr2d[0].length; j++) {
+    for(let i = 0; i < arr2d.length; i++) { // 행의 길이값
+      for(let j = 0; j < arr2d[i].length; j++) { // 0행에서 증가 하면서 0번재 행, 1번째 행....
         //if(j!=0) document.write(",")
         document.write(arr2d[i][j])
       }
       document.write("<br>")
     }
   </script>
+  
+    <li>배열 구조 분해 할당(Array Destructing Assignment)</li>
+    <script>
+      const arr9 = [1,2,3]
+      const [a,b,c] = arr9
+      console.log(a, b, c)
+      const [x,  , z] = [10,20,30]
+      console.log(x,z)
+    </script>
   </ol>
   <hr>
 </body>
