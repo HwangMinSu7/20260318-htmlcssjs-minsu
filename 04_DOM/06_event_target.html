@@ -25,24 +25,24 @@
     <ul id="menu">
       <li>짜장</li>
       <li>짬뽕</li>
-      <li>탄수육</li>
+      <li>탕수육</li>
     </ul>
     <script>
-      const menu = document.getElementById("menu")
-      menu.addEventListener("click", (e) => {
-        // li가 ul의 하위요소이기 떄문에 버블링을 역으로 이용
-        alert("클릭한 항목:" + e.target.textContent);
-      }) // console,log가 아니라서 , 있으면 안됌
-    </script>
+       const menu = document.getElementById("menu")
+       menu.addEventListener("click", (e) => {
+         // li가 ul의 하위요소이기 떄문에 버블링을 역으로 이용
+         alert("클릭한 항목:" + e.target.textContent);
+       }) // console,log가 아니라서 , 있으면 안됌
+     </script>
     
-    <li>matches()</li>
-    <script>
-      menu.addEventListener("click", (e) => {
-        if(e.target.matches("li")) {
-        alert("클릭한 항목:" + e.target.textContent);
-        }
-      }) // console,log가 아니라서 , 있으면 안됌
-    </script>
+     <li>matches()</li>
+     <script>
+       menu.addEventListener("click", (e) => {
+         if(e.target.matches("li")) {
+         alert("클릭한 항목:" + e.target.textContent);
+         }
+       }) // console,log가 아니라서 , 있으면 안됌
+     </script>
 
     <li>closest()</li>
     <script>
