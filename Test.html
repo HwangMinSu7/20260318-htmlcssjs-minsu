@@ -25,6 +25,59 @@
 <body>
   <h4>테스트</h4>
   <a href="/"><span class="material-symbols-outlined">home</span>Home</a>
+ <hr>
+  <h3>클릭, 선택창 바꾸기</h3>
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  <!--👉 배경색 바뀜
+👉 선택된 것만 강조됨
+<ul id="menu">
+  <li>HTML</li>
+  <li>CSS</li>
+  <li>JS</li>
+</ul>
+#menu li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.active {
+  background-color: black;
+  color: white;
+}
+  const menu = document.querySelector("#menu");
+
+menu.addEventListener("click", function(e) {
+  const li = e.target.closest("li");
+
+  if(!li) return;
+
+  // 기존 active 제거
+  const items = document.querySelectorAll("#menu li");
+  items.forEach(function(item){
+    item.classList.remove("active");
+  });
+
+  // 클릭한 것에 active 추가
+  li.classList.add("active");
+});-->
 </body>
 
 </html>
