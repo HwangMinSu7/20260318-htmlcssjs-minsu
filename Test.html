@@ -13,12 +13,12 @@
    
   </style>
   <script>
-    let friend = [
-      {name:'민수', age:28},
-      {name:'지민', age: 27}
-    ]
-    for(let p of friend)
-    console.log(`${p.name}, ${p.age}`);
+    // let friend = [
+    //   {name:'민수', age:28},
+    //   {name:'지민', age: 27}
+    // ]
+    // for(let p of friend)
+    // console.log(`${p.name}, ${p.age}`);
   </script>
 </head>
 
@@ -28,43 +28,32 @@
  <hr>
   <h3>클릭, 선택창 바꾸기</h3>
 
-  <script>
-  <ul id="menu">
-    <li>html</li>
-    <li>css</li>
-    <li>js</li>
-  </ul>
-  </script>
-  <style>
-    #menu li {
-      padding: 1px;
-      cursor: pointer;
-    } 
-  </style>
-
-
-
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-  <!--👉 배경색 바뀜
-👉 선택된 것만 강조됨
 <ul id="menu">
+  <li>html</li>
+  <li>css</li>
+  <li>js</li>
+</ul>
+<script>
+  const menu = document.querySelector("#menu");
+
+  menu.addEventListener("click", function(e) {
+    const li = e.target.closest("li");
+    if(!li) return;
+  }) 
+  const active = menu.querySelectorAll(".active");
+  if (li===active) {
+    li.classList.remove("active");
+    return;
+  }
+</script>
+
+ <!-- <ul id="menu">
   <li>HTML</li>
   <li>CSS</li>
   <li>JS</li>
 </ul>
+
+<style>
 #menu li {
   padding: 10px;
   cursor: pointer;
@@ -74,22 +63,32 @@
   background-color: black;
   color: white;
 }
-  const menu = document.querySelector("#menu");
+</style>
+
+<script>
+const menu = document.querySelector("#menu");
 
 menu.addEventListener("click", function(e) {
   const li = e.target.closest("li");
+  if (!li) return;
 
-  if(!li) return;
+  const active = menu.querySelector(".active");
 
-  // 기존 active 제거
-  const items = document.querySelectorAll("#menu li");
-  items.forEach(function(item){
-    item.classList.remove("active");
-  });
+  // 👉 같은 거 다시 누르면 해제
+  if (li === active) {
+    li.classList.remove("active");
+    return;
+  }
 
-  // 클릭한 것에 active 추가
+  // 👉 기존 active 제거
+  if (active) {
+    active.classList.remove("active");
+  }
+
+  // 👉 새로 추가
   li.classList.add("active");
-});-->
+}); -->
+<!-- </script> -->
 </body>
 
 </html>
