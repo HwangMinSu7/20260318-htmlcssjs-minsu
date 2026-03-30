@@ -46,16 +46,20 @@
   <a href="/"><span class="material-symbols-outlined">home</span>Home</a>
   <hr>
   <ul>
+    
     <li>이벤트를 부여하는 방식 3가지와 stopImmediatePropagation()</li>
     <ol>
       <li>Event Handler Property 방식 :: 복수일때 가장 마지막 정의된 것 적용</li>
       <span>스크립트의 요소.onclick, onkeypress, onchange, onmouseover, ...</span>
+      
       <li>addEventListener("click", 콜백함수) 정의(권장) :: 복수일때 누적</li>
       <span>addEventListener방식은 이벤트가 누적된다.</span>
+      
       <li>Inline Event Handler</li>
       <span>
         <xmp> <button onclick="alert('hello')">버튼</button> </xmp>
       </span>
+      
       <div style="width:200px;height:100px;background: pink;" id="box">
         <a href="#" id="alink" style="background: blueviolet;">link</a>
       </div>
@@ -76,6 +80,7 @@
         document.querySelector('#alink').addEventListener("click", (e) => { alert("alink2") })
       </script>
     </ol>
+
     <li>이벤트의 전파 3단계와 stopPropagation() </li>
     <ol>
       <li>Capturing Phase(캡쳐링) :: 부모 => 자식</li>
