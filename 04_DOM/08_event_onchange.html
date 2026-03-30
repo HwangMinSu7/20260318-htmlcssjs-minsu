@@ -21,6 +21,7 @@
           console.log(selectValue+"/"+selectText);
           var arr = models[selectValue];
           model.innerHTML="";
+          // model.innerHTML=""; 없어도 됌 (현대를 선택했다면 모델에 현대만 떠야 됌)
           var tmp ='';
           for(let i=0;i<arr.length;i++){
             tmp += `<option value="${i}">${arr[i]}</option>`
@@ -38,6 +39,8 @@
       <option value="2">Ford</option>
       <option value="3">Audi</option>
     </select>
+
     <select name="model" id="model" style="width: 200px;"></select>
+  
   </body>
 </html>
