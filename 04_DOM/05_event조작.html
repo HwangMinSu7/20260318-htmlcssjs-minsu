@@ -8,60 +8,34 @@
   <title>Document</title>
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=home" />
-  <style>
-  </style>
+  <style></style>
+  <script src="/js/script.js"></script>
   <script>
     window.onload = function () {
       const btnSubmit = document.querySelector('form>button')
       const id = document.querySelector('#id')
       const pass = document.querySelector('#pass')
-      
-      btnSubmit.onclick = function (e)/*event*/ {
 
-        e.preventDefault();
-        
-        //유효성 검사 (validation check)
-        
-        if(id.value=="") {
+      // submit과 button의 차이
+      btnSubmit.onclick = function (e) {
+        e.preventDefault(); // 기본 설정된 이벤트를 막을 때
+        // 유효성 검사(validation check)
+        if (id.value == "") {
           alert("아이디를 확인해주세요");
-          id.focus() /*아이디를 안치면 알람이 뜨고 난 후 누르지 않아도 자동적으로 박스 커서가 깜빡깜빡 거린다.*/
-        return;
-      }
-        if(pass.value=="") {
+          // const alink = document.querySelector("#alink")
+        //alink.onclick = (e) => {
+        // 이렇게 바꿀수 있다.
+        // document.붜리셀렉터.("alink").에드이벤트이스널("click", (e) => )
+          id.focus();  /*아이디를 안치면 알람이 뜨고 난 후 누르지 않아도 자동적으로 박스 커서가 깜빡깜빡 거린다.*/
+          return;
+        }
+        if (pass.value == "") {
           alert("비밀번호를 확인해주세요");
-          pass.focus() /*비밀번호를 안치면 알람이 뜨고 난 후 누르지 않아도 자동적으로 박스 커서가 깜빡깜빡 거린다.*/
-        return;
-      }
+          pass.focus()
+          return;
+        }
         document.querySelector('#form').submit();
       }
-
-      // event를 주는 방식 2가지
-      
-      const box = document.querySelector("#box")
-      box.onclick = (e) => {
-        alert("box")
-      }
-      box.onclick = (e) => {
-        alert("box2")
-      }
-
-      const alink = document.querySelector("#alink")
-      alink.onclick = (e) => {
-        // alink 클릭 => box 이벤트도 전파되는데 이것을 막기 위함.
-        // div가 부모)  자식을 눌렀는데 부모한테로 가는것을
-        // bubbling 버블링  
-        //e.stopPropagation();
-        alert("alink")
-      }
-      
-      document.body.addEventListener("click", function (e) {
-      // const alink = document.querySelector("#alink")
-      //alink.onclick = (e) => {
-        // 이렇게 바꿀수 있다.
-      // document.붜리셀렉터.("alink").에드이벤트이스널("click", (e) => )
-        alert("body");
-        e.stopPropagation();
-      })
     }
   </script>
 </head>
@@ -71,31 +45,78 @@
   <p></p>
   <a href="/"><span class="material-symbols-outlined">home</span>Home</a>
   <hr>
-  <ol>
-    <li>이벤트를 처리(주는) 방식 1 (onclick, onkeypress, onchange, onmouseover, ...)</li>
-    <ul>
-      <li>Event Handler Property 방식 :: 가장 마지막 정의된 것 적용</li>
-      <p>스크립트의 요소. (onclick, onkeypress, onchange, onmouseover, ...)</p>
-      <li>addEventListener("click", 콜백함수) 정의(권장) :: 누적</li>
-      <p>addEventListener 방식은 이벤트가 누적된다.</p>
-      <li>Inkine Event Handler</li>
-      <xmp><button onclick="alert('hello')">버튼</button></xmp>
-    </ul>
-    <li>이벤트의 전파</li>
-    <ul>
-      <li>capturing Phase(캡쳐링) :: 부모 => 자식</li>
-      <li>Taget Phase(타겟) :: 타겟된 실제 요소</li>
+  <ul>
+    <li>이벤트를 부여하는 방식 3가지와 stopImmediatePropagation()</li>
+    <ol>
+      <li>Event Handler Property 방식 :: 복수일때 가장 마지막 정의된 것 적용</li>
+      <span>스크립트의 요소.onclick, onkeypress, onchange, onmouseover, ...</span>
+      <li>addEventListener("click", 콜백함수) 정의(권장) :: 복수일때 누적</li>
+      <span>addEventListener방식은 이벤트가 누적된다.</span>
+      <li>Inline Event Handler</li>
+      <span>
+        <xmp> <button onclick="alert('hello')">버튼</button> </xmp>
+      </span>
+      <div style="width:200px;height:100px;background: pink;" id="box">
+        <a href="#" id="alink" style="background: blueviolet;">link</a>
+      </div>
+      <script>
+        const box = document.querySelector('#box')
+        box.onclick = (e) => { alert("box1") }
+        box.onclick = (e) => { alert("box2") }
+        document.querySelector('#alink').addEventListener("click",
+          (e) => {
+            alert("alink1");
+            // const alink = document.querySelector("#alink")
+        //alink.onclick = (e) => {
+        // 이렇게 바꿀수 있다.
+        // document.붜리셀렉터.("alink").에드이벤트이스널("click", (e) => )
+            e.stopImmediatePropagation(); //stopPropagation()보다 강력 같은 요소마적 막음.
+          }
+        )
+        document.querySelector('#alink').addEventListener("click", (e) => { alert("alink2") })
+      </script>
+    </ol>
+    <li>이벤트의 전파 3단계와 stopPropagation() </li>
+    <ol>
+      <li>Capturing Phase(캡쳐링) :: 부모 => 자식</li>
+      <li>Target Phase(타겟) :: 타겟된 실제 요소</li>
       <li>Bubbling Phase(버블링) :: 자식 => 부모</li>
-    </ul>
-  </ol>
-  <form id="form" action="/" method="get">
-    <input type="text" name="id" id="id" required>
-    <input type="password" name="pass" id="pass">
-    <button type="submit">로그인</button>
-  </form>
-  <div style="width: 200px;  height: 100px;  background: pink;"  id="box">
-    <a href="#" id="alink" style="background: blue;">link</a>
-  </div>
+    </ol>
+    <div id="outer" style="padding:30px; background:lightcoral;">
+      outer
+      <div id="inner" style="padding:30px; background:lightyellow;">
+        inner
+        <button id="btn">클릭</button>
+      </div>
+    </div>
+    <script>
+      const outer = document.getElementById("outer");
+      const inner = document.getElementById("inner");
+      const btn = document.getElementById("btn");
+
+      outer.addEventListener("click", () => alert("outer - bubbling"));
+      outer.addEventListener("click", () => alert("outer - capturing"), true);
+
+      inner.addEventListener("click", () => alert("inner - bubbling"));
+      inner.addEventListener("click", () => alert("inner - capturing"), true);
+
+      btn.addEventListener("click",
+        (e) => {
+          alert("button 클릭");
+          e.stopPropagation()
+        } // 다른 요소 전파를 막을 때
+      );
+    </script>
+
+    <li>submit, button 타입의 event와 preventDefault()</li>
+    <form id="form" action="/" method="get">
+      <input type="text" name="id" id="id" required>
+      <input type="password" name="pass" id="pass">
+      <button type="submit">로그인</button>
+    </form>
+  </ul>
+
+
 
 </body>
 
