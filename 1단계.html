@@ -27,24 +27,23 @@
   <a href="/"><span class="material-symbols-outlined">home</span>Home</a>
  <hr>
   <h3>클릭, 선택창 바꾸기</h3>
-
-<ul id="menu">
-  <li>html</li>
-  <li>css</li>
-  <li>js</li>
-</ul>
+  <ul id="menu">
+    <li>html</li>
+    <li>css</li>
+    <li>js</li>
+  </ul>
 <script>
   const menu = document.querySelector("#menu");
-
-  menu.addEventListener("click", function(e) {
+    
+  menu.addEventListener("click", function(e){
     const li = e.target.closest("li");
-    if(!li) return;
-  }) 
-  const active = menu.querySelectorAll(".active");
-  if (li===active) {
-    li.classList.remove("active");
-    return;
-  }
+    if(!li) return
+
+    const isActive = li.classList.contains("avtive");
+
+    const avtive = menu.querySelectorAll(".avtive");
+    actives.forEach(el => el.classList.remove("active"));
+  })
 </script>
 
  <!-- <ul id="menu">
@@ -72,23 +71,20 @@ menu.addEventListener("click", function(e) {
   const li = e.target.closest("li");
   if (!li) return;
 
-  const active = menu.querySelector(".active");
+  const isActive = li.classList.contains("active");
 
-  // 👉 같은 거 다시 누르면 해제
-  if (li === active) {
-    li.classList.remove("active");
-    return;
-  }
+  // 모든 active 제거
+  const actives = menu.querySelectorAll(".active");
+  actives.forEach(el => el.classList.remove("active"));
+  // 반복중인 하나의 요소(element)
 
-  // 👉 기존 active 제거
-  if (active) {
-    active.classList.remove("active");
-  }
+  // 이미 열려있던 걸 클릭한 경우 → 닫기만 하고 끝
+  if (isActive) return;
 
-  // 👉 새로 추가
+  // 아니면 새로 active 추가
   li.classList.add("active");
-}); -->
-<!-- </script> -->
+});
+</script> -->
 </body>
 
 </html>
